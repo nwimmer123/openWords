@@ -1,7 +1,12 @@
 var express = require('express');
 var app = express();
+var html = require('html');
+
 var fs = require('fs');
 var readline = require('readline');
+
+// serve static files from public folder
+app.use('/',express.static(__dirname + '/public'));
 
 /**********
  * ROUTES *
