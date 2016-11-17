@@ -13,16 +13,7 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-getTxt = function (){
 
-  $.ajax({
-    url: 'languages/english.txt',
-    success: function (data){
-      console.log("CLICKED");
-      console.log(data)
-    }
-  })
-}
 
 /**********
  * SERVER *
