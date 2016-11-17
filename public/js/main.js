@@ -2,7 +2,8 @@ $(document).ready(function(){
   console.log("Hi Mother Fucker");
 
   $("#generate").on("click", function() {
-    getTxt();
+    getAttributes();
+    //getTxt();
   });
 
 });
@@ -17,4 +18,10 @@ getTxt = function (){
     }
   })
 };
+
+function getAttributes() {
+  var numWords = $("#numWords").val();
+  var minLetters = $("#minNum").val();
+  var maxLetters = $("#maxNum").val();
+}
 
