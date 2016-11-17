@@ -2,19 +2,6 @@ var express = require('express');
 var app = express();
 var html = require('html');
 
-// var fs = require('fs');
-// var readline = require('readline');
-
-// var filename = process.argv[2];
-// readline.createInterface({
-//     input: fs.createReadStream(filename),
-//     terminal: false
-// }).on('line', function(line) {
-//    console.log('Line: ' + line);
-// });
-
-// var array = load(filename);
-
 // serve static files from public folder
 app.use('/',express.static(__dirname + '/public'));
 
@@ -25,6 +12,17 @@ app.use('/',express.static(__dirname + '/public'));
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
+
+getTxt = function (){
+
+  $.ajax({
+    url: 'languages/english.txt',
+    success: function (data){
+      console.log("CLICKED");
+      console.log(data)
+    }
+  })
+}
 
 /**********
  * SERVER *
