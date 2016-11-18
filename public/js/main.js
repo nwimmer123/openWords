@@ -19,25 +19,36 @@ function getTxt(){
   })
 };
 
-// function getAttributes() {
-//   var numWords = $("#numWords").val();
-//   var minLetters = $("#minNum").val();
-//   var maxLetters = $("#maxNum").val();
-// };
-
 function generateArray(data){
-  console.log(data);
-  console.log(arrayAttributes);
+  console.log(arrayAttributes[0].minLetters);
+  var finalArray = data.filter(filterByLength);
+  console.log(finalArray);
+};
+
+function filterByLength(obj) {
+  if ((obj.length >= arrayAttributes[0].minLetters) && (obj.length <= arrayAttributes[0].maxLetters)) {
+    return true
+  } else {
+    return false
+  }
+};
+
+function removeWords(){
+  if (this.length < arrayAttributes[0].minLetters) {
+    this.slice
+  };
+  if (this.length > arrayAttributes[0].maxLetters) {
+    this.slice
+  };
 };
 
 //store array attributes
- var arrayAttributes = [];
+var arrayAttributes = [];
 function getAttributes() {
- 
   arrayAttributes.push({
     numWords: parseInt($("#numWords").val()),
     minLetters: parseInt($("#minNum").val()),
     maxLetters: parseInt($("#maxNum").val()),
   })
-}
+};
 
