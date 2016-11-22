@@ -13,8 +13,6 @@ app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-
-
 /**********
  * SERVER *
  **********/

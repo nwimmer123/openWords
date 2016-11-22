@@ -1,13 +1,22 @@
 $(document).ready(function(){
-  console.log("Hi Mother Fucker");
 
   $("#generate").on("click", function() {
     getAttributes();
     getTxt();
-    //generateWords();
+  });
+
+  $("#reset").on("click", function() {
+    document.location.reload(true);
   });
 
 });
+
+function display(){
+  console.log("In Display");
+  words = words.join(", ");
+  $("#yourWords").text(words);
+  console.log(words);
+}
 
 //gets the root word list
 function getTxt(){
@@ -15,17 +24,22 @@ function getTxt(){
   $.ajax({
     url: "languages/" + language + ".txt",
     success: function (data){
-      data = data.split(/\r?\n/);
+      data = data.split(/\r?\n/); 
       generateArray(data);
+      display();
     }
   })
 };
 
 //creating the new array
+var words = [];
 function generateArray(data){
   var finalArray = data.filter(filterByLength);
   finalArray = shuffle(finalArray);
-  console.log(finalArray);
+  for(var i = 0; i < arrayAttributes[0].numWords; i ++) {
+    words.push(finalArray[i]);
+   }
+  return words;
 };
 
 //filters array by desired word length
@@ -63,12 +77,5 @@ function shuffle(array) {
   return array;
 }
 
-//populate array w different words for each game
-var gameWords = [];
-function generateWords() {
-  shuffle(array);
-  for(var i = 0; i < arrayAttributes[0].numWords; i ++) {
-    gameWords.push(words[i]);
-   }
-}
+
 
