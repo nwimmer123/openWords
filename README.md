@@ -31,3 +31,6 @@ After cloning the repository and installing the necessary dependencies, navigate
 Next, type in a minimum and maximum word length as well as the number of words you want to generate. Be sure to select a language from the dropdown menu.
 Click the "Generate my Array" button to see the random words.
 Click "Reset Form" to reset the form.
+
+##How to contribute
+Make sure you've cloned the repository to a local machine. Then, create a fork off of the main branch and make changes there. Once complete, commit and push your changes to your local repository and raise a pull request to the main branch.
